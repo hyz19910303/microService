@@ -5,8 +5,6 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.baomidou.mybatisplus.mapper.EntityWrapper;
-import com.baomidou.mybatisplus.mapper.Wrapper;
 import com.neusoft.microservice.beans.User;
 import com.neusoft.microservice.provider.dao.UserDao;
 import com.neusoft.microservice.provider.service.UserService;
@@ -34,20 +32,19 @@ public class UserServiceImpl implements UserService {
 	
 	@Override
 	public User getUser(String id) {
-		User user = userdao.selectById(id);
+		User user = userdao.findUser(id);
 		return user;
 	}
 
 	@Override
 	public boolean addUser(User user) {
-		Integer insert = userdao.insert(user);
+		Integer insert = userdao.addUser(user);
 		return insert==1?true:false;
 	}
 
 	@Override
 	public List<User> getUserList() {
-		Wrapper<User> wrapper= new EntityWrapper<User>();
-		List<User> selectList = userdao.selectList(wrapper);
+		List<User> selectList = userdao.selectList();
 		return selectList;
 	}
 

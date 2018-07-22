@@ -1,6 +1,9 @@
 package com.neusoft.microservice.provider.dao;
 
-import com.baomidou.mybatisplus.mapper.BaseMapper;
+import java.util.List;
+
+import org.apache.ibatis.annotations.Param;
+
 import com.neusoft.microservice.beans.User;
 
 /**
@@ -16,6 +19,11 @@ import com.neusoft.microservice.beans.User;
 *        
 */
 
-public interface UserDao extends BaseMapper<User>{
+public interface UserDao// extends BaseMapper<User>
+{
+	int addUser(User user);
 	
+	User findUser(@Param("id")String id);
+	
+	List<User> selectList();
 }
