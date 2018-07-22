@@ -10,6 +10,7 @@
   	<maven.compiler.source>1.8</maven.compiler.source>
 	<maven.compiler.target>1.8</maven.compiler.target>
 	<lombok.version>1.16.18</lombok.version>
+	<springloaded>1.2.8.RELEASE</springloaded>
   </properties>
   <dependencyManagement>
   		<dependencies>
@@ -25,7 +26,8 @@
 			<dependency>
 			    <groupId>org.springframework.boot</groupId>
 			    <artifactId>spring-boot-dependencies</artifactId>
-			    <version>2.0.1.RELEASE</version>
+			    <!-- <version>2.0.1.RELEASE</version> -->
+			    <version>1.5.9.RELEASE</version>
 			    <type>pom</type>
 			    <scope>import</scope>
 			</dependency>
@@ -72,5 +74,6 @@
   <modules>
   <module>microservice-inerfance</module>
   <module>microservice-euraeke-9001</module>
+  <module>microservice-provider-user-6001</module>
   </modules>
 </project>

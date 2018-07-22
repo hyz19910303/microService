@@ -2,6 +2,8 @@ package com.neusoft.microservice.beans;
 
 import java.io.Serializable;
 
+import com.baomidou.mybatisplus.annotations.TableName;
+
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -24,6 +26,7 @@ import lombok.experimental.Accessors;
 @Accessors(chain=true)
 @AllArgsConstructor
 @NoArgsConstructor
+@TableName(value="tb_user")
 public class User implements Serializable{
 	/**
 	 * serialVersionUID
@@ -32,9 +35,9 @@ public class User implements Serializable{
 
 	private String id;
 	
-	private String userName;
+	private String user_name;
 	
-	private String createTime;
+	private String real_name;
 	
 	
 }
