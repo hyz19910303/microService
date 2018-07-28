@@ -20,7 +20,7 @@ public interface UserInterfance {
 	
 	boolean addUser(User user);
 	
-	boolean getUser(String id);
+	User getUser(String id);
 	
 	List<User> getUserList();
 }
