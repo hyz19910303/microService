@@ -2,7 +2,7 @@ server:
   port: 9001
 eureka:
   instance:
-    hostname: localhost:9001   #eureka服务端实例名称
+    hostname: localhost   #eureka服务端实例名称
   client:
     register-with-eureka: false #表示不向服务注册中心注册自己
     fetch-registry: false #false表示自己端就是注册中心，我的职责就是维护服务实例，并不需要去检索服务

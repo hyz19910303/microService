@@ -1,0 +1,47 @@
+logging:
+  level:
+    com.neusoft.microservice.provider.service: debug
+server:
+  port: 6001
+mybatis:
+  config-location: classpath:mybatis/mybatis.cfg.xml
+  mapper-locations:
+  - classpath:mybatis/mapper/*.xml
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:9001/eureka #单机版
+  instance:
+    instance-id: microservice-user-6001 #向eureka注册中心注册服务时候 自身的唯一ID
+    app-group-name: true 
+    prefer-ip-address: true #在eureka中心查看微服务提供者时候 能够显示是哪一个Ip
+info:
+  app.name: 用户的微服务
+  company.name: www.neusoft.com
+  build.artifactId: microservice-provider-user-6001
+  build.version: 0.0.1-SNAPSHOT
+spring:
+  application:
+    name: microservicecloud-user #微服务名称
+  datasource:
+    druid:
+#      url: jdbc:oracle:thin:@192.168.159.133:1521/orcl
+      url: jdbc:oracle:thin:@192.168.100.205:1521/chm
+      driver-class-name: oracle.jdbc.driver.OracleDriver
+      username: chm
+      password: chm
+      initial-size: 20
+      max-active: 50
+      min-idle: 10
+      max-wait: 60
+      pool-prepared-statements: true
+      max-open-prepared-statements: 10
+      validation-query: select 1 from  dual
+      validation-query-timeout: 600
+      min-evictable-idle-time-millis: 60000
+      keep-alive: true
+      test-on-borrow: true
+      test-on-return: true
+      test-while-idle: true
+      time-between-eviction-runs-millis: 6000
+      filters: stat,wall,log4j

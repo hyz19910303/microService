@@ -13,7 +13,8 @@ eureka:
       defaultZone: http://localhost:9001/eureka #单机版
   instance:
     instance-id: microservice-user-6001 #向eureka注册中心注册服务时候 自身的唯一ID
-    app-group-name: true #在eureka中心查看微服务提供者时候 能够显示是哪一个Ip
+    app-group-name: true 
+    prefer-ip-address: true #在eureka中心查看微服务提供者时候 能够显示是哪一个Ip
 info:
   app.name: 用户的微服务
   company.name: www.neusoft.com
@@ -24,10 +25,11 @@ spring:
     name: microservicecloud-user #微服务名称
   datasource:
     druid:
-      url: jdbc:oracle:thin:@192.168.159.133:1521/orcl
+#      url: jdbc:oracle:thin:@192.168.159.133:1521/orcl
+      url: jdbc:oracle:thin:@192.168.100.205:1521/chm
       driver-class-name: oracle.jdbc.driver.OracleDriver
-      username: CXDC
-      password: neusoft
+      username: chm
+      password: chm
       initial-size: 20
       max-active: 50
       min-idle: 10
