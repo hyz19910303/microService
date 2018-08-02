@@ -8,11 +8,13 @@
 		insert into tb_user(user_name,real_name)
 		values(#{user_name},#{real_name})
 	</insert>
-	<select id="findUser" resultType="com.neusoft.microservice.beans.User">
+	<select id="findUser"
+		resultType="com.neusoft.microservice.beans.User">
 		select * from tb_user where user_id=#{id}
 	</select>
-	<select id="selectList" resultType="com.neusoft.microservice.beans.User">
-		select user_id id, user_name,real_name  from tb_user
+	<select id="selectList"
+		resultType="com.neusoft.microservice.beans.User">
+		select * from tb_user
 	</select>
 </mapper>
  
