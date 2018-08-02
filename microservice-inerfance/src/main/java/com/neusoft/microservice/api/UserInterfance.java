@@ -2,6 +2,11 @@ package com.neusoft.microservice.api;
 
 import java.util.List;
 
+import org.springframework.cloud.netflix.feign.FeignClient;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+
 import com.neusoft.microservice.beans.User;
 
 /**
@@ -16,11 +21,17 @@ import com.neusoft.microservice.beans.User;
 *Description: 
 *        
 */
+
+@FeignClient("MICROSERVICECLOUD-USER")
+@RequestMapping("/user")
 public interface UserInterfance {
 	
+	@RequestMapping(value = "/add",method=RequestMethod.POST)
 	boolean addUser(User user);
 	
-	User getUser(String id);
+	@RequestMapping(value = "/get",method=RequestMethod.GET)
+	User getUser(@PathVariable("id")String id);
 	
+	@RequestMapping(value = "/list",method=RequestMethod.GET)
 	List<User> getUserList();
 }
