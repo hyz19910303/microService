@@ -51,7 +51,7 @@
   		</dependencies>
   </dependencyManagement>
   <build>
-  	<finalName>microService</finalName>
+  	<finalName>${artifactId}</finalName>
   	<resources>
   		<resource>
   			<directory>src/main/resources</directory>
