@@ -10,7 +10,7 @@
 	</insert>
 	<select id="findUser"
 		resultType="com.neusoft.microservice.beans.User">
-		select * from tb_user where user_id=#{id}
+		select * from tb_user where id=#{id}
 	</select>
 	<select id="selectList"
 		resultType="com.neusoft.microservice.beans.User">

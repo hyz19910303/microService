@@ -22,14 +22,15 @@ info:
   build.version: $project.version$
 spring:
   application:
-    name: microservicecloud-user #微服务名称
+    #微服务名称
+    name: microservicecloud-user 
   datasource:
     druid:
-#      url: jdbc:oracle:thin:@192.168.159.133:1521/orcl
-      url: jdbc:oracle:thin:@192.168.100.205:1521/chm
+      url: jdbc:oracle:thin:@192.168.159.133:1521/orcl
+#      url: jdbc:oracle:thin:@192.168.100.205:1521/chm
       driver-class-name: oracle.jdbc.driver.OracleDriver
-      username: chm
-      password: chm
+      username: jkfp
+      password: neusoft
       initial-size: 20
       max-active: 50
       min-idle: 10

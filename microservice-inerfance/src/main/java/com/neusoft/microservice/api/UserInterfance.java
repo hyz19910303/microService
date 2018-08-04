@@ -22,14 +22,14 @@ import com.neusoft.microservice.beans.User;
 *        
 */
 
-@FeignClient("MICROSERVICECLOUD-USER")
+@FeignClient(value="MICROSERVICECLOUD-USER")
 @RequestMapping("/user")
 public interface UserInterfance {
 	
 	@RequestMapping(value = "/add",method=RequestMethod.POST)
 	boolean addUser(User user);
 	
-	@RequestMapping(value = "/get",method=RequestMethod.GET)
+	@RequestMapping(value = "/{id}",method=RequestMethod.GET)
 	User getUser(@PathVariable("id")String id);
 	
 	@RequestMapping(value = "/list",method=RequestMethod.GET)

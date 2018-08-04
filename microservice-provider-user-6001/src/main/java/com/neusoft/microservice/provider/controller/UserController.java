@@ -27,7 +27,7 @@ public class UserController {
 	@Autowired
 	private UserService userService;
 	
-	@RequestMapping("{id}")
+	@RequestMapping("/{id}")
 	public Object getUserInfo(@PathVariable(name="id")String id) {
 		return userService.getUser(id);
 	}

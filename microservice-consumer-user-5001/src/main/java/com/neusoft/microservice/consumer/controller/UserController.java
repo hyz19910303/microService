@@ -29,7 +29,8 @@ public class UserController {
 	@Autowired
 	private UserInterfance userService;
 	
-	private String url="http://localhost:6001/user/";
+//	private String url="http://localhost:6001/user/";
+	private String url="http://MICROSERVICECLOUD-USER/user/";
 	
 	@Autowired
 	private RestTemplate restTemp;
@@ -37,17 +38,17 @@ public class UserController {
 	
 	
 	@RequestMapping("/{id}")
-	private String  getUserInfo(@PathVariable(name="id")String id) {
+	public Object  getUserInfo(@PathVariable(name="id")String id) {
 		 User user = userService.getUser(id);
-		 return user.toString();
+		 return user;
 	}
 	
 
 	@RequestMapping("/list")
 	public Object getUserList() {
-		//return userService.getUserList();
-		Object forObject = restTemp.getForObject(url+"list", Object.class);
-		return forObject;
+		return userService.getUserList();
+//		Object forObject = restTemp.getForObject(url+"list", Object.class);
+//		return forObject;
 	}
 	
 	@RequestMapping("/add")
