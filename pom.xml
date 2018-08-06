@@ -80,5 +80,6 @@
   <module>microservice-euraeke-9001</module>
   <module>microservice-provider-user-6001</module>
   <module>microservice-consumer-user-5001</module>
+  <module>microservice-provider-user-6002</module>
   </modules>
 </project>
