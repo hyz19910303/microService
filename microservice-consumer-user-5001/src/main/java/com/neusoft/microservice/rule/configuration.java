@@ -1,4 +1,4 @@
-package com.neusoft.microservice.consumer.config;
+package com.neusoft.microservice.rule;
 
 import org.springframework.cloud.client.loadbalancer.LoadBalanced;
 import org.springframework.context.annotation.Bean;
@@ -21,19 +21,15 @@ import com.netflix.loadbalancer.IRule;
  */
 
 @Configuration
-public class RestConfiguration {
+public class configuration {
+
 
 	@Bean
-	public RestTemplate restTemplate() {
-		return new RestTemplate();
+	@LoadBalanced
+	public IRule getIRule() {
+		//轮训规则
+		//RetryRule retryRule = new RetryRule();
+		IRule retryRule= new MyLoadBalanceRule();
+		return retryRule;
 	}
-
-//	@Bean
-//	@LoadBalanced
-//	public IRule getIRule() {
-//		//轮训规则
-//		//RetryRule retryRule = new RetryRule();
-////		IRule retryRule= new MyLoadBalanceRule();
-////		return retryRule;
-//	}
 }
