@@ -1,6 +1,6 @@
 server:
   port: 5001
-#服务熔断
+#服务熔断 默认未打开 官网说明有误
 feign: 
   hystrix: 
     enabled: true
