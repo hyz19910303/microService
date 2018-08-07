@@ -51,8 +51,8 @@ public class UserController {
 	@RequestMapping("/list")
 	public Object getUserList() {
 		List<User> userList = userService.getUserList();
-		if(userList.size()<5) {
-			throw new NullPointerException("列表少于5个");
+		if(userList.size()==0) {
+			throw new NullPointerException("列表少于1个");
 		}
 		return userList;
 	}
