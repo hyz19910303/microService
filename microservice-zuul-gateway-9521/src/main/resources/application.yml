@@ -1,0 +1,27 @@
+server:
+  port: 9521
+eureka:
+  client:
+    service-url:
+      defaultZone: http://eureka9001:9001/eureka,http://eureka9002:9002/eureka,http://eureka9003:9003/eureka #集群版
+  instance:
+    instance-id: microservice-zuul-gateway-9521
+    prefer-ip-address: true
+spring:
+  application:
+    name: microservice-zuul-gateway-service
+info:
+  app.name: 用户的微服务
+  company.name: www.neusoft.com
+  build.artifactId: $project.artifactId$
+  build.version: $project.version$
+zuul:
+  ignored-services: "*"  
+  prefix: /microservice  #加前
+  routes:
+    user: 
+      path: /user/**
+      serviceId: microservicecloud-user
+      #url: 
+    
+    

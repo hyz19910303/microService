@@ -103,5 +103,6 @@
 		<module>
 			microservice-consumer-user-hystrix-dashboard-4001
 		</module>
+		<module>microservice-zuul-gateway-9521</module>
 	</modules>
 </project>
