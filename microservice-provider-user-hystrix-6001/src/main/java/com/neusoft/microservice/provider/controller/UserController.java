@@ -1,5 +1,7 @@
 package com.neusoft.microservice.provider.controller;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -48,7 +50,11 @@ public class UserController {
 	
 	@RequestMapping("/list")
 	public Object getUserList() {
-		return userService.getUserList();
+		List<User> userList = userService.getUserList();
+		if(userList.size()<5) {
+			throw new NullPointerException("列表少于5个");
+		}
+		return userList;
 	}
 	
 	@RequestMapping("/add")

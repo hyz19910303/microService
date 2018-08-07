@@ -6,7 +6,6 @@ import java.util.List;
 import org.springframework.stereotype.Component;
 
 import com.neusoft.microservice.beans.User;
-
 import feign.hystrix.FallbackFactory;
 
 /**
@@ -26,15 +25,17 @@ import feign.hystrix.FallbackFactory;
 
 @Component
 public class UserFallbackFactory implements FallbackFactory<UserInterfance>{
-
+	
+	public UserFallbackFactory() {
+	};
+	
 	@Override
 	public UserInterfance create(Throwable cause) {
-		
 		return new UserInterfance() {
 			
 			@Override
 			public List<User> getUserList() {
-				return Arrays.asList();
+				return Arrays.asList(new User().setAccountno("1111"));
 			}
 			
 			@Override

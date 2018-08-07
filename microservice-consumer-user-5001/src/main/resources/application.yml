@@ -1,9 +1,12 @@
 server:
   port: 5001
-
-
+#服务熔断
+feign: 
+  hystrix: 
+    enabled: true
 eureka:
   client:
     register-with-eureka: false
     service-url:
-      defaultZone: http://localhost:9001/eureka
+      #defaultZone: http://localhost:9001/eureka
+      defaultZone: http://eureka9001:9001/eureka,http://eureka9002:9002/eureka,http://eureka9003:9003/eureka #集群版

@@ -29,7 +29,11 @@ public class UserController {
 	
 	@RequestMapping("/{id}")
 	public Object getUserInfo(@PathVariable(name="id")String id) {
-		return userService.getUser(id);
+		User user = userService.getUser(id);
+		if(user==null) {
+			throw new NullPointerException("未找到相应的用户信息");
+		}
+		return user;
 	}
 	
 	@RequestMapping("/list")
