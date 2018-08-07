@@ -98,5 +98,6 @@
 		<module>microservice-provider-user-6003</module>
 		<module>microservice-euraeke-9002</module>
 		<module>microservice-euraeke-9003</module>
+		<module>microservice-provider-user-hystrix-6001</module>
 	</modules>
 </project>

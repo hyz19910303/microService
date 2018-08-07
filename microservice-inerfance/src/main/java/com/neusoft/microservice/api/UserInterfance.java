@@ -21,8 +21,8 @@ import com.neusoft.microservice.beans.User;
 *Description: 
 *        
 */
-
-@FeignClient(value="MICROSERVICECLOUD-USER")
+//value  指定 面向接口编程 该接口对应哪一个服务 fallbackFactory 指定hystrix熔断机制指定的返回工厂
+@FeignClient(value="MICROSERVICECLOUD-USER",fallbackFactory=UserFallbackFactory.class)
 @RequestMapping("/user")
 public interface UserInterfance {
 	

@@ -2,6 +2,7 @@ package com.neusoft.microservice.consumer;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.cloud.client.circuitbreaker.EnableCircuitBreaker;
 import org.springframework.cloud.netflix.eureka.EnableEurekaClient;
 import org.springframework.cloud.netflix.feign.EnableFeignClients;
 import org.springframework.cloud.netflix.ribbon.RibbonClient;
@@ -27,6 +28,8 @@ import com.neusoft.microservice.rule.configuration;
 @ComponentScan("com.neusoft.microservice")
 //自定义负载均衡策略
 @RibbonClient(name="MICROSERVICECLOUD-DEPT",configuration=configuration.class)
+// 服务熔断
+//@EnableCircuitBreaker()
 public class UserConsumerApplication_5001 {
 	
 	public static void main(String[] args) {
