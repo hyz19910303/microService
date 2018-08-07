@@ -20,7 +20,6 @@
 		<dependency>
 			<groupId>org.springframework</groupId>
 			<artifactId>springloaded</artifactId>
-			<version>${springloaded}</version>
 		</dependency>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>

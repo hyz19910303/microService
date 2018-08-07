@@ -10,7 +10,8 @@ mybatis:
 eureka:
   client:
     service-url:
-      defaultZone: http://localhost:9001/eureka #单机版
+      #defaultZone: http://localhost:9001/eureka #单机版
+      defaultZone: http://eureka9001:9001/eureka,http://eureka9002:9002/eureka,http://eureka9003:9003/eureka #集群版
   instance:
     instance-id: microservice-user-6001 #向eureka注册中心注册服务时候 自身的唯一ID
     app-group-name: true 
