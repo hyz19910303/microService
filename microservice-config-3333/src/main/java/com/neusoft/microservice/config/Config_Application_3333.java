@@ -1,5 +1,6 @@
 package com.neusoft.microservice.config;
 
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.cloud.config.server.EnableConfigServer;
@@ -21,6 +22,7 @@ import org.springframework.cloud.config.server.EnableConfigServer;
 @EnableConfigServer  //配置中心端
 public class Config_Application_3333 {
 
+	
 	public static void main(String[] args) {
 		SpringApplication.run(Config_Application_3333.class, args);
 	}
