@@ -11,7 +11,7 @@
 	<description>服务注册和发现</description>
 	<dependencies>
 
-		<!-- eureka-server 服务注册 服务端 -->
+		<!-- eureka-server  服务注册 服务端 -->
 		<dependency>
 			<groupId>org.springframework.cloud</groupId>
 			<artifactId>spring-cloud-starter-eureka-server</artifactId>
@@ -20,6 +20,7 @@
 		<dependency>
 			<groupId>org.springframework</groupId>
 			<artifactId>springloaded</artifactId>
+			<version>${springloaded}</version>
 		</dependency>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
