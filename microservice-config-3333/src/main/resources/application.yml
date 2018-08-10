@@ -8,3 +8,5 @@ spring:
       server:
         git:
           uri: git@github.com:hyz19910303/microService.git
+          timeout: 30
+          
