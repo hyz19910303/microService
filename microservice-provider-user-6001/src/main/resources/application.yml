@@ -47,4 +47,4 @@ spring:
       test-on-return: true
       test-while-idle: true
       time-between-eviction-runs-millis: 6000
-      filters: stat,wall,log4j
+      filters: stat,wall
