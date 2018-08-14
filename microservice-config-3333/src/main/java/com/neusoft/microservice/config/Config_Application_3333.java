@@ -23,6 +23,7 @@ import org.springframework.cloud.config.server.EnableConfigServer;
 public class Config_Application_3333 {
 
 	
+	
 	public static void main(String[] args) {
 		SpringApplication.run(Config_Application_3333.class, args);
 	}
