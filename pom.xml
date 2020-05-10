@@ -16,7 +16,10 @@
 	</properties>
 	<dependencyManagement>
 		<dependencies>
-			<!-- https://mvnrepository.com/artifact/org.springframework.cloud/spring-cloud-dependencies -->
+			<!--关于spring cloud 和springboot版本兼容问题
+			Finchley 兼容2.0X 不兼容1.5x
+			Edgware 兼容1.5x 不兼容2.0x
+			-->
 			<dependency>
 				<groupId>org.springframework.cloud</groupId>
 				<artifactId>spring-cloud-dependencies</artifactId>
@@ -25,8 +28,6 @@
 				<type>pom</type>
 				<scope>import</scope>
 			</dependency>
-			
-			<!-- https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-dependencies -->
 			<dependency>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-dependencies</artifactId>

@@ -1,50 +1,53 @@
+spring:
+  application:
+    name: microservice-config-user-provider6001
 logging:
   level:
     com.neusoft.microservice.provider.service: debug
-server:
-  port: 6002
-mybatis:
-  config-location: classpath:mybatis/mybatis.cfg.xml
-  mapper-locations:
-  - classpath:mybatis/mapper/*.xml
-eureka:
-  client:
-    service-url:
-      #defaultZone: http://localhost:9001/eureka #单机版
-      defaultZone: http://eureka9001:9001/eureka,http://eureka9002:9002/eureka,http://eureka9003:9003/eureka #集群版
-  instance:
-    instance-id: microservice-user-6002 #向eureka注册中心注册服务时候 自身的唯一ID
-    app-group-name: true 
-    prefer-ip-address: true #在eureka中心查看微服务提供者时候 能够显示是哪一个Ip
-info:
-  app.name: 用户的微服务
-  company.name: www.neusoft.com
-  build.artifactId: $project.artifactId$
-  build.version: $project.version$
-spring:
-  application:
-    #微服务名称
-    name: microservicecloud-user 
-  datasource:
-    druid:
-#      url: jdbc:oracle:thin:@192.168.159.133:1521/orcl
-      url: jdbc:oracle:thin:@127.0.0.1:1521/xe
-#      url: jdbc:oracle:thin:@192.168.100.205:1521/chm
-      driver-class-name: oracle.jdbc.driver.OracleDriver
-      username: cxdc
-      password: neusoft
-      initial-size: 20
-      max-active: 50
-      min-idle: 10
-      max-wait: 60
-      pool-prepared-statements: true
-      max-open-prepared-statements: 10
-      validation-query: select 1 from  dual
-      validation-query-timeout: 600
-      min-evictable-idle-time-millis: 60000
-      keep-alive: true
-      test-on-borrow: true
-      test-on-return: true
-      test-while-idle: true
-      time-between-eviction-runs-millis: 6000
-      filters: stat,wall #,log4j
+#server:
+#  port: 6002
+#mybatis:
+#  config-location: classpath:mybatis/mybatis.cfg.xml
+#  mapper-locations:
+#  - classpath:mybatis/mapper/*.xml
+#eureka:
+#  client:
+#    service-url:
+#      #defaultZone: http://localhost:9001/eureka #单机版
+#      defaultZone: http://eureka9001:9001/eureka,http://eureka9002:9002/eureka,http://eureka9003:9003/eureka #集群版
+#  instance:
+#    instance-id: microservice-user-6002 #向eureka注册中心注册服务时候 自身的唯一ID
+#    app-group-name: true
+#    prefer-ip-address: true #在eureka中心查看微服务提供者时候 能够显示是哪一个Ip
+#info:
+#  app.name: 用户的微服务
+#  company.name: www.neusoft.com
+#  build.artifactId: $project.artifactId$
+#  build.version: $project.version$
+#spring:
+#  application:
+#    #微服务名称
+#    name: microservicecloud-user
+#  datasource:
+#    druid:
+##      url: jdbc:oracle:thin:@192.168.159.133:1521/orcl
+#      url: jdbc:oracle:thin:@127.0.0.1:1521/xe
+##      url: jdbc:oracle:thin:@192.168.100.205:1521/chm
+#      driver-class-name: oracle.jdbc.driver.OracleDriver
+#      username: cxdc
+#      password: neusoft
+#      initial-size: 20
+#      max-active: 50
+#      min-idle: 10
+#      max-wait: 60
+#      pool-prepared-statements: true
+#      max-open-prepared-statements: 10
+#      validation-query: select 1 from  dual
+#      validation-query-timeout: 600
+#      min-evictable-idle-time-millis: 60000
+#      keep-alive: true
+#      test-on-borrow: true
+#      test-on-return: true
+#      test-while-idle: true
+#      time-between-eviction-runs-millis: 6000
+#      filters: stat,wall #,log4j

@@ -1,12 +1,22 @@
-server:
-  port: 5001
-#服务熔断 默认未打开 官网说明有误
-feign: 
-  hystrix: 
-    enabled: true
-eureka:
-  client:
-    register-with-eureka: false
-    service-url:
-      #defaultZone: http://localhost:9001/eureka
-      defaultZone: http://eureka9001:9001/eureka,http://eureka9002:9002/eureka,http://eureka9003:9003/eureka #集群版
+spring:
+  application:
+    name: microservice-user-consumer
+#server:
+#  port: 5001
+##服务熔断 默认未打开 官网说明有误
+#feign:
+#  hystrix:
+#    enabled: true
+#eureka:
+#  client:
+#    register-with-eureka: true
+#    service-url:
+#      #defaultZone: http://localhost:9001/eureka
+#      defaultZone: http://eureka9001:9001/eureka,http://eureka9002:9002/eureka,http://eureka9003:9003/eureka #集群版
+#  instance:
+#    instance-id: microservice-user-consumer-5001 #向eureka注册中心注册服务时候 自身的唯一ID
+#    app-group-name: true
+#    prefer-ip-address: true #在eureka中心查看微服务提供者时候 能够显示是哪一个Ip
+#spring:
+#  application:
+#    name: microservice-user-consumer

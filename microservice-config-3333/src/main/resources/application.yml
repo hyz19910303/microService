@@ -7,6 +7,17 @@ spring:
     config:
       server:
         git:
-          uri: git@github.com:hyz19910303/microService.git
+          uri: https://github.com/hyz19910303/microservice-config.git
+          default-label: master  #配置仓库的分支
+          search-paths: /**  #仓库文件夹目录，如果是/**，就是所有目录所有文件
+          basedir: target/config  #配置文件拉去到本地的目录位置
           timeout: 30
-          
+#eureka:
+#  client:
+#    service-url:
+#      #defaultZone: http://localhost:9001/eureka #单机版
+#      defaultZone: http://eureka9001:9001/eureka,http://eureka9002:9002/eureka,http://eureka9003:9003/eureka #集群版
+#    instance:
+#      instance-id: microservice-config-server #向eureka注册中心注册服务时候 自身的唯一ID
+#      app-group-name: true
+#      prefer-ip-address: true #在eureka中心查看微服务提供者时候 能够显示是哪一个Ip

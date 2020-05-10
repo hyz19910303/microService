@@ -46,13 +46,25 @@
 			<artifactId>spring-boot-devtools</artifactId>
 		</dependency>
 		<!-- hystrix 和 hystrix-dashboard -->
+		<!--        1.5x hystrix 坐标-->
+		<!--<dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-hystrix</artifactId>
+        </dependency>-->
+		<!--        2.0x hystrix坐标变化-->
 		<dependency>
 			<groupId>org.springframework.cloud</groupId>
-			<artifactId>spring-cloud-starter-hystrix</artifactId>
+			<artifactId>spring-cloud-starter-netflix-hystrix</artifactId>
 		</dependency>
-		<dependency>
+		<!--        1.5x hystrix-dashboard 坐标-->
+		<!--<dependency>
 			<groupId>org.springframework.cloud</groupId>
 			<artifactId>spring-cloud-starter-hystrix-dashboard</artifactId>
+		</dependency>-->
+		<!--        2.0x hystrix-dashboard-->
+		<dependency>
+			<groupId>org.springframework.cloud</groupId>
+			<artifactId>spring-cloud-starter-netflix-hystrix-dashboard</artifactId>
 		</dependency>
 	</dependencies>
 	<build>
@@ -70,15 +82,4 @@
 			</plugin>
 		</plugins>
 	</build>
-	<dependencyManagement>
-		<dependencies>
-			<dependency>
-				<groupId>org.springframework.cloud</groupId>
-				<artifactId>spring-cloud-dependencies</artifactId>
-				<version>Edgware.SR4</version>
-				<type>pom</type>
-				<scope>import</scope>
-			</dependency>
-		</dependencies>
-	</dependencyManagement>
 </project>

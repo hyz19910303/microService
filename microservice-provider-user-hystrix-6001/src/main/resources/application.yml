@@ -27,11 +27,11 @@ spring:
     name: microservicecloud-user 
   datasource:
     druid:
-#      url: jdbc:oracle:thin:@192.168.159.133:1521/orcl
-      url: jdbc:oracle:thin:@127.0.0.1:1521/xe
+      url: jdbc:oracle:thin:@192.168.159.133:1521/orcl
+#      url: jdbc:oracle:thin:@127.0.0.1:1521/xe
 #      url: jdbc:oracle:thin:@192.168.100.205:1521/chm
       driver-class-name: oracle.jdbc.driver.OracleDriver
-      username: jkfp
+      username: cxdc
       password: neusoft
       initial-size: 20
       max-active: 50
@@ -47,4 +47,4 @@ spring:
       test-on-return: true
       test-while-idle: true
       time-between-eviction-runs-millis: 6000
-      filters: stat,wall,log4j
+      filters: stat,wall #,log4j

@@ -16,7 +16,7 @@ info:
   build.artifactId: $project.artifactId$
   build.version: $project.version$
 zuul:
-  ignored-services: "*"  
+  ignored-services: "*"  #原真实微服务名称 忽略即不允许访问
   prefix: /microservice  #加前
   routes:
     user: 
