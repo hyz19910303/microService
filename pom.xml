@@ -107,5 +107,6 @@
 		</module>
 		<module>microservice-zuul-gateway-9521</module>
 		<module>microservice-config-3333</module>
+		<module>microservice-zipkin-server-8001</module>
 	</modules>
 </project>

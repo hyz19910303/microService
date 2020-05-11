@@ -1,0 +1,23 @@
+spring:
+  application:
+    name: microservice-zipken-server-8001
+server:
+  port: 8001
+eureka:
+  client:
+    service-url:
+      defaultZone: http://eureka9001:9001/eureka,http://eureka9002:9002/eureka,http://eureka9003:9003/eureka #集群版
+  instance:
+    instance-id: microservice-sleuth-8001 #向eureka注册中心注册服务时候 自身的唯一ID
+    app-group-name: true
+    prefer-ip-address: true #在eureka中心查看微服务提供者时候 能够显示是哪一个Ip
+info:
+  app.name: 微服务--链路追踪
+  company.name: www.neusoft.com
+  build.artifactId: ${project.artifactId}
+  build.version: ${project.version}
+management:
+  metrics:
+    web:
+      server:
+        auto-time-requests: false

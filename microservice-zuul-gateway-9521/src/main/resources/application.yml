@@ -11,7 +11,7 @@ spring:
   application:
     name: microservice-zuul-gateway-service
 info:
-  app.name: 用户的微服务
+  app.name: 用户的微服务-网关服务
   company.name: www.neusoft.com
   build.artifactId: $project.artifactId$
   build.version: $project.version$
@@ -19,9 +19,11 @@ zuul:
   ignored-services: "*"  #原真实微服务名称 忽略即不允许访问
   prefix: /microservice  #加前
   routes:
-    user: 
-      path: /user/**
+    userprovider: #随便定义
+      path: /provier/**  #对应 microservicecloud-user微服务 路径的前缀
       serviceId: microservicecloud-user
-      #url: 
+    userconsumer: #随便定义
+      path: /consumer/**  #对应 microservice-user-consumer微服务 路径的前缀
+      serviceId: microservice-user-consumer
     
     

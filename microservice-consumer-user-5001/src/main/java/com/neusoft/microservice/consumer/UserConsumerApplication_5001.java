@@ -1,5 +1,6 @@
 package com.neusoft.microservice.consumer;
 
+import com.neusoft.microservice.rule.RuleConfiguration;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.cloud.netflix.eureka.EnableEurekaClient;
@@ -7,7 +8,6 @@ import org.springframework.cloud.netflix.ribbon.RibbonClient;
 import org.springframework.cloud.openfeign.EnableFeignClients;
 import org.springframework.context.annotation.ComponentScan;
 
-import com.neusoft.microservice.rule.configuration;
 
 /**
 *Create at 2018年7月28日 下午6:07:51
@@ -26,7 +26,7 @@ import com.neusoft.microservice.rule.configuration;
 @EnableFeignClients(basePackages="com.neusoft.microservice")
 @ComponentScan("com.neusoft.microservice")
 //自定义负载均衡策略
-@RibbonClient(name="MICROSERVICECLOUD-DEPT",configuration=configuration.class)
+@RibbonClient(name="MICROSERVICECLOUD-USER",configuration= RuleConfiguration.class)
 public class UserConsumerApplication_5001 {
 	
 	public static void main(String[] args) {

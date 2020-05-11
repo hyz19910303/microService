@@ -1,17 +1,23 @@
 server: 
     port: 3333
 spring:
+  profiles:
+    active: native
   application:
     name: config-server-3333
   cloud:
     config:
       server:
-        git:
-          uri: https://github.com/hyz19910303/microservice-config.git
-          default-label: master  #配置仓库的分支
-          search-paths: /**  #仓库文件夹目录，如果是/**，就是所有目录所有文件
-          basedir: target/config  #配置文件拉去到本地的目录位置
-          timeout: 30
+#        git:
+#          uri: https://github.com/hyz19910303/microservice-config.git
+#          default-label: master  #配置仓库的分支
+#          search-paths: /**  #仓库文件夹目录，如果是/**，就是所有目录所有文件
+#          basedir: target/config  #配置文件拉去到本地的目录位置
+#          timeout: 30
+        native:
+          search-locations: classpath:/config
+
+
 #eureka:
 #  client:
 #    service-url:

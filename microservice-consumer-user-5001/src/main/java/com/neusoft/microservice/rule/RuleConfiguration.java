@@ -21,15 +21,15 @@ import com.netflix.loadbalancer.RetryRule;
  */
 
 @Configuration
-public class configuration {
+public class RuleConfiguration {
 
 
-	@Bean
-	@LoadBalanced
-	public IRule getIRule() {
-		//轮训规则
-		RetryRule retryRule = new RetryRule();
-		//IRule retryRule= new MyLoadBalanceRule();
-		return retryRule;
-	}
+//	@Bean
+//	@LoadBalanced
+//	public IRule getIRule() {
+//		//轮训规则
+//		RetryRule retryRule = new RetryRule();
+//		//IRule retryRule= new MyLoadBalanceRule();
+//		return retryRule;
+//	}
 }

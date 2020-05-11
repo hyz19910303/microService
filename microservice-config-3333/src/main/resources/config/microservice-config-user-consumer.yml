@@ -1,0 +1,21 @@
+spring:
+  profiles:
+    active: -dev
+---
+feign:
+  hystrix:
+    enabled: true
+spring:
+  profiles: dev
+  zipkin:
+    base-url: http://localhost:8001/
+    enabled: true
+  sleuth:
+    enabled: true
+    sampler:
+      probability: 1 #采样率，值为[0,1]之间的任意实数，顾名思义，这里代表100%采集报告。
+eureka:
+  client:
+    register-with-eureka: true
+    service-url:
+      defaultZone: http://eureka9001:9001/eureka,http://eureka9002:9002/eureka,http://eureka9003:9003/eureka #集群版

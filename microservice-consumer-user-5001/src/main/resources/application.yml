@@ -1,8 +1,22 @@
 spring:
   application:
     name: microservice-user-consumer
-#server:
-#  port: 5001
+logging:
+  level:
+    com.neusoft.microservice: debug
+    org.springframework.web.servlet.DispatcherServlet: debug
+server:
+  port: 5001
+eureka:
+  instance:
+    instance-id: microservice-user-consumer-5001 #向eureka注册中心注册服务时候 自身的唯一ID
+    app-group-name: true
+    prefer-ip-address: true #在eureka中心查看微服务提供者时候 能够显示是哪一个Ip
+info:
+  app.name: 微服务-用户微服务消费者
+  company.name: www.neusoft.com
+  build.artifactId: ${project.artifactId}
+  build.version: ${project.version}
 ##服务熔断 默认未打开 官网说明有误
 #feign:
 #  hystrix:
@@ -19,4 +33,5 @@ spring:
 #    prefer-ip-address: true #在eureka中心查看微服务提供者时候 能够显示是哪一个Ip
 #spring:
 #  application:
+
 #    name: microservice-user-consumer
